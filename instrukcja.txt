@@ -1,0 +1,27 @@
+== Instrukcja dla Programistów - Dostosowanie Bota do Weryfikacji ==
+
+Witaj, programisto! Poniżej znajdziesz kroki niezbędne do dostosowania kodu bota do weryfikacji na serwerze Discord Hackerspace Trójmiasto:
+
+1. **Instalacja wymaganych bibliotek:** Upewnij się, że masz zainstalowane wymagane biblioteki. Użyj poniższej komendy w terminalu:
+
+pip install discord.py
+
+
+2. **Ustawienia tokena bota:** Zamień linię `bot.run('TOKEN_BOTA')` na swoją własną wartość tokena bota, aby uzyskać dostęp do API Discord.
+
+3. **Dostosowanie ustawień serwera:** Zaktualizuj wartość zmiennej `guild_id` na ID swojego serwera Discord.
+
+4. **Dostosowanie treści wiadomości weryfikacyjnej:** Zmień treść wiadomości weryfikacyjnej w sekcji `await member.send(...)`, aby dostosować ją do własnych potrzeb.
+
+5. **Dostosowanie czasu oczekiwania:** Zmień wartość `timedelta(days=30)` na inny okres czasu, jeśli chcesz skrócić lub przedłużyć czas oczekiwania na weryfikację.
+
+6. **Dostosowanie warunków weryfikacji:** Jeśli potrzebujesz dostosować warunki weryfikacji, zaktualizuj sekcję warunków weryfikacji w pętli `for member in guild.members`.
+
+7. **Dostosowanie komunikatów o błędach:** Zaktualizuj obsługę błędów, aby dostosować ją do własnych potrzeb i monitorować działanie bota.
+
+8. **Uruchomienie bota:** Po dokonaniu dostosowań, uruchom bota, aby sprawdzić, czy działa poprawnie. W terminalu wpisz:
+
+python nazwa_twojego_pliku.py
+
+
+Pamiętaj, aby dostosować kod zgodnie z własnymi potrzebami. Jeśli masz pytania lub potrzebujesz pomocy, skonsultuj się z dokumentacją Discord.py lub skontaktuj się z użytkownikiem Kinter na Discord.
