@@ -41,7 +41,7 @@ async def check_verification():
                 join_date_utc = join_date.replace(tzinfo=timezone.utc) if join_date.tzinfo is None else join_date.astimezone(timezone.utc)
 
                 # Sprawdzenie, czy minęło 30 dni od dołączenia
-                if (datetime.utcnow().replace(tzinfo=timezone.utc) - join_date_utc) >= timedelta(minutes=5):
+                if (datetime.utcnow().replace(tzinfo=timezone.utc) - join_date_utc) >= timedelta(days=30):
                     # Sprawdzenie, czy użytkownik nie ma roli "weryfikacja" i nie jest botem
                     is_verified = any(role.name.lower() == 'weryfikacja' for role in member.roles)
                     is_bot = member.bot
